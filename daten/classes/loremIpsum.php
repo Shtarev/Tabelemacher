@@ -6,7 +6,7 @@
 namespace classes;
 
 class loremIpsum {
-    public function textSchafen($von, $bis){
+    public static function textSchafen($von, $bis){
         if($von > $bis) {
             echo('<center style="background-color: bisque"><hr><font color="#FF0000"><b>Fehler</b> in Datei:<br>'.debug_backtrace()[0]['file'].'<br>in Zeile: '.debug_backtrace()[0]['line'].'</font>');
             return '***<br><font color="#006600">loremIpsum($von, $bis)<br>loremIpsum('.$von.', '.$bis.')<br>Argument <b>$von</b> kann nicht mehr als Argument <b>$bis</b> sein.</font><hr></center>';

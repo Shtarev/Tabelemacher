@@ -4,7 +4,7 @@ namespace classes;
 use classes\loremIpsum as loremContent;
 
 class tabelleAusfuellen {
-    public function tabelleSchafen($anschluss, $tname, $imgDir, $width, $height, $menge){
+    public static function tabelleSchafen($anschluss, $tname, $imgDir, $width, $height, $menge){
         // устанавливаем время работы PHP-скрипта т.к. размер таблицы может быть большой
         set_time_limit($menge);
         for($count = 0; $count < $menge; $count++){
@@ -78,6 +78,10 @@ class tabelleAusfuellen {
             $text = "<p>".loremContent::textSchafen(200, 600)."</p><p>".loremContent::textSchafen(100, 300)."</p><p>".loremContent::textSchafen(300, 700)."</p>";
             // Делаем изображение
             $pic = uniqid().".png"; // уникальное название изображения будет внесено в базу
+            // создатьдиректорию для фото, если директории не существует  
+            if(!is_dir($_SERVER['DOCUMENT_ROOT']."/".$imgDir)) {  
+                mkdir($_SERVER['DOCUMENT_ROOT']."/".$imgDir);  
+            }  
             $imgName = "/".$imgDir."/".$pic; // уникальное название изображения + папка куда изображение будет сохранено
             $img = imagecreatetruecolor($width, $height); // создаем матрицу изображения
             /* ЦВЕТ - иннициализируем цвета */

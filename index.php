@@ -3,6 +3,7 @@ session_start();
 if(isset($_SESSION['dbhost'])){$dbhost=$_SESSION['dbhost'];}else{$dbhost="";}
 if(isset($_SESSION['dbname'])){$dbname=$_SESSION['dbname'];}else{$dbname="";}
 if(isset($_SESSION['dbuser'])){$dbuser=$_SESSION['dbuser'];}else{$dbuser="";}
+if(isset($_SESSION['dbpass'])){$dbpass=$_SESSION['dbpass'];}else{$dbpass="";}
 if(isset($_SESSION['tname'])){$tname=$_SESSION['tname'];}else{$tname="";}
 if(isset($_SESSION['menge'])){$menge=$_SESSION['menge'];}else{$menge="";}
 if(isset($_SESSION['imgDir'])){$imgDir=$_SESSION['imgDir'];}else{$imgDir="";}
@@ -13,7 +14,7 @@ if(isset($_SESSION['imgHeight'])){$imgHeight=$_SESSION['imgHeight'];}else{$imgHe
 <html>
 <head>
 <meta charset="utf-8">
-<title>MySQL Tabellen erstellen</title>
+<title></title>
 <script type="text/javascript" src="daten/js/jquery.min.js"></script>
 <link href="daten/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -33,32 +34,33 @@ if(isset($_SESSION['imgHeight'])){$imgHeight=$_SESSION['imgHeight'];}else{$imgHe
 <center>
 <div id="mitteilung">
     <?php
-    if($_SERVER['HTTP_REFERER']){
+    if(isset($_SERVER['HTTP_REFERER'])){
         if(isset($_SESSION['mitteilung'])){
             echo $_SESSION['mitteilung'];
         }
     }
     ?>
 </div>
-
-    <h3>Eine Tabelle in MySQL erstellen</h3>
+    <div id="titleschrift"></div>
+    <br>
     <form action="daten/robot.php" method="post">
-        <input type="text" name="dbhost" id="dbhost" value="<?=$dbhost?>" placeholder="Datenbank Server" />
-        <input type="text" name="dbname" id="dbname" value="<?=$dbname?>" placeholder="Datenbank Name" />
-        <input type="text" name="dbuser" id="dbuser" value="<?=$dbuser?>" placeholder="Datenbank Benutzername" />
-        <input type="text" name="dbpass" id="dbpass" value="<?=$dbpass?>" placeholder="Datenbank Passwort" />
-        <input type="text" name="tname" id="tname" value="<?=$tname?>" placeholder="Name der Tabelle" />
-        <input type="text" name="menge" id="menge" value="<?=$menge?>" placeholder="Anzahl der Datensätze" />
-        <input type="text" name="imgDir" id="imgDir" value="<?=$imgDir?>" placeholder="Image Directory" />
-        <h5>Bildformat (px)</h5>
-        <input type="text" name="imgWidth" id="imgWidth" value="<?=$imgWidth?>" placeholder="Breite" /> X
-        <input type="text" name="imgHeight" id="imgHeight" value="<?=$imgHeight?>" placeholder="Höhe" />
+        <input type="hidden" name="language" id="language" value="" />
+        <input type="text" name="dbhost" id="dbhost" value="<?=$dbhost?>" placeholder="" />
+        <input type="text" name="dbname" id="dbname" value="<?=$dbname?>" placeholder="" />
+        <input type="text" name="dbuser" id="dbuser" value="<?=$dbuser?>" placeholder="" />
+        <input type="text" name="dbpass" id="dbpass" value="<?=$dbpass?>" placeholder="" />
+        <input type="text" name="tname" id="tname" value="<?=$tname?>" placeholder="" />
+        <input type="text" name="menge" id="menge" value="<?=$menge?>" placeholder="" />
+        <input type="text" name="imgDir" id="imgDir" value="<?=$imgDir?>" placeholder="" />
+        <h5 id="bildformat"></h5>
+        <input type="text" name="imgWidth" id="imgWidth" value="<?=$imgWidth?>" placeholder="" /> X
+        <input type="text" name="imgHeight" id="imgHeight" value="<?=$imgHeight?>" placeholder="" />
         <br>
-        <input type="submit" name="instal" onClick="foo()" id="knopf" value="Tabelle Installieren" />
+        <input type="submit" name="instal" onClick="foo()" id="knopf" value="" />
     </form>
 </center>
 <footer>
-    Copyright © 2010<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script> | Freiheitsgewährende Software | Design & programmierung by<br>Andrey Shtarev<br><a href="" id="info" onClick="return false;">Mehr Infotmation</a>
+    Copyright © 2010<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script> | Freiheitsgewährende Software | Design & programmierung by<br>Andrey Shtarev<br><a href="https://github.com/Shtarev" id="info" onClick="return false;">Mehr Infotmation</a>
 </footer>
 <script type="text/javascript" src="daten/js/jsScript.js"></script>
 </body>
