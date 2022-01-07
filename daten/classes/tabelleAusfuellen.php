@@ -78,10 +78,10 @@ class tabelleAusfuellen {
             $text = "<p>".loremContent::textSchafen(200, 600)."</p><p>".loremContent::textSchafen(100, 300)."</p><p>".loremContent::textSchafen(300, 700)."</p>";
             // Делаем изображение
             $pic = uniqid().".png"; // уникальное название изображения будет внесено в базу
-            // создатьдиректорию для фото, если директории не существует  
-            if(!is_dir($_SERVER['DOCUMENT_ROOT']."/".$imgDir)) {  
-                mkdir($_SERVER['DOCUMENT_ROOT']."/".$imgDir);  
-            }  
+            // создать директорию для фото, если директории не существует  
+            if(!is_dir($_SERVER['DOCUMENT_ROOT']."/".$imgDir)) {
+                mkdir($_SERVER['DOCUMENT_ROOT']."/".$imgDir, 0777, true);
+            }
             $imgName = "/".$imgDir."/".$pic; // уникальное название изображения + папка куда изображение будет сохранено
             $img = imagecreatetruecolor($width, $height); // создаем матрицу изображения
             /* ЦВЕТ - иннициализируем цвета */
