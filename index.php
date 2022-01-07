@@ -26,7 +26,7 @@ if(isset($_SESSION['imgHeight'])){$imgHeight=$_SESSION['imgHeight'];}else{$imgHe
     Zeigen Sie den rechten Weg zum Ordner wo die Bilder(Foto) sich befinden sollen, weil gerade in dieser Ordner die Bilder installieren werden.<br>
     Jede Eintragung hat seine eigene ID, Foto, beschreibung, usw. Am Ende der Installation die Tabelle soll etwas so aussehen:
     <hr>
-    После работы скрипта вы получите в базе заполненную таблицу, типа той, что внизу на фото, а так же на сервере будет создана директория с изображениями, которые будут соответствовать пути прописанному в созданной таблице, в колонке 'img'.
+    После работы скрипта вы получите в базе заполненную таблицу, типа той, что внизу на фото, а так же на сервере будет создана директория с изображениями, названия которых будут прописаны в созданной таблице, в колонке 'img'.
     <img src="daten/tabelle.jpg" />
     Copyright © Andrey Shtarev.<br>
     Das Skript ist Freiheitsgewährende Software, es bedeuted: Sie können das kostenlos und ohne Beschränkungen zu verwenden.<br>
